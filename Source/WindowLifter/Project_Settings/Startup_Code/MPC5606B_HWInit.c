@@ -8,8 +8,8 @@
  *  VERSION: 1.0
  */
 
-#include "MAL\MPC5606B.h"   /* platform development header */
-#include "MAL\MPC5606B_HWInit.h"
+#include "HAL\MPC5606B.h"   /* platform development header */
+#include "HAL\MPC5606B_HWInit.h"
 
 #ifdef __cplusplus
 extern "C" {

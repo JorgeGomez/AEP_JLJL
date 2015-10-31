@@ -1,10 +1,12 @@
-Sources/MAL/IntcInterrupts_c.obj: C:\Users\Jorge\Desktop\AEP\drive\ AEP\Jorge\ Workspace\Window\ lifter\ JorgeWS\Source\WindowLifter\Sources\MAL\IntcInterrupts.c \
+Sources/HAL/stmDvr_c.obj: C:\Users\Jorge\Desktop\AEP\drive\ AEP\Jorge\ Workspace\Window\ lifter\ JorgeWS\Source\WindowLifter\Sources\HAL\stmDvr.c \
 	C:\Freescale\CW\ MCU\ v10.6\MCU\PA_Support\ewl\EWL_C\include\lib_ewl.prefix \
 	C:\Freescale\CW\ MCU\ v10.6\MCU\PA_Support\ewl\EWL_C\include\common.prefix \
 	C:\Freescale\CW\ MCU\ v10.6\MCU\PA_Support\ewl\EWL_C\include\ewl_c_version.h \
 	C:\Users\Jorge\Desktop\AEP\drive\ AEP\Jorge\ Workspace\Window\ lifter\ JorgeWS\Source\WindowLifter\Prefix\MPC5606B_FLASH_VLE.prefix \
-	C:\Users\Jorge\Desktop\AEP\drive\ AEP\Jorge\ Workspace\Window\ lifter\ JorgeWS\Source\WindowLifter\Project_Headers\MAL\MPC5606B.h \
-	C:\Users\Jorge\Desktop\AEP\drive\ AEP\Jorge\ Workspace\Window\ lifter\ JorgeWS\Source\WindowLifter\Project_Headers\MAL\typedefs.h \
+	C:\Users\Jorge\Desktop\AEP\drive\ AEP\Jorge\ Workspace\Window\ lifter\ JorgeWS\Source\WindowLifter\Project_Headers\HAL\stmDvr.h \
+	C:\Users\Jorge\Desktop\AEP\drive\ AEP\Jorge\ Workspace\Window\ lifter\ JorgeWS\Source\WindowLifter\Project_Headers\HAL\MainConfig.h \
+	C:\Users\Jorge\Desktop\AEP\drive\ AEP\Jorge\ Workspace\Window\ lifter\ JorgeWS\Source\WindowLifter\Project_Headers\HAL\MPC5606B.h \
+	C:\Users\Jorge\Desktop\AEP\drive\ AEP\Jorge\ Workspace\Window\ lifter\ JorgeWS\Source\WindowLifter\Project_Headers\HAL\typedefs.h \
 	C:\Freescale\CW\ MCU\ v10.6\MCU\PA_Support\ewl\EWL_C\include\stdint.h \
 	C:\Freescale\CW\ MCU\ v10.6\MCU\PA_Support\ewl\EWL_C\include\ansi_parms.h \
 	C:\Freescale\CW\ MCU\ v10.6\MCU\PA_Support\ewl\EWL_C\include\ewlGlobals.h \
@@ -13,4 +15,4 @@ Sources/MAL/IntcInterrupts_c.obj: C:\Users\Jorge\Desktop\AEP\drive\ AEP\Jorge\ W
 	C:\Freescale\CW\ MCU\ v10.6\MCU\PA_Support\ewl\EWL_C\include\cstdint \
 	C:\Freescale\CW\ MCU\ v10.6\MCU\PA_Support\ewl\EWL_C\include\limits_api.h \
 	C:\Freescale\CW\ MCU\ v10.6\MCU\PA_Support\ewl\EWL_C\include\ewl_lib_ext1.h \
-	C:\Users\Jorge\Desktop\AEP\drive\ AEP\Jorge\ Workspace\Window\ lifter\ JorgeWS\Source\WindowLifter\Project_Headers\MAL\IntcInterrupts.h 
+	C:\Users\Jorge\Desktop\AEP\drive\ AEP\Jorge\ Workspace\Window\ lifter\ JorgeWS\Source\WindowLifter\Project_Headers\HAL\stdtypedef.h 

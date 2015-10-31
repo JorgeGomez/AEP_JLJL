@@ -2,7 +2,7 @@
 # Automatically-generated file. Do not edit!
 ################################################################################
 
-#Progress monitor hint: 9
+#Progress monitor hint: 12
 first : all
 -include ../makefile.init
 
@@ -16,6 +16,8 @@ RM := "$(GNU_Make_Install_DirEnv)/rm" -f
 -include subdir.mk
 -include Sources/subdir.mk
 -include Sources/MAL/subdir.mk
+-include Sources/HAL/subdir.mk
+-include Sources/Application/subdir.mk
 -include Project_Settings/Startup_Code/subdir.mk
 -include objects.mk
 
@@ -74,7 +76,7 @@ all: warning-messages explicit-dependencies WindowLifter.elf
 # Tool invocations
 WindowLifter.elf: $(OBJS) $(USER_OBJS) ../Project_Settings/Linker_Files/MPC5606B_FLASH.lcf
 	@echo 'Building target: $@'
-	@echo 'Executing target #10 $@'
+	@echo 'Executing target #13 $@'
 	@echo 'Invoking: PowerPC Linker'
 	"$(PAToolsDirEnv)/mwldeppc" -o "WindowLifter.elf" @@"WindowLifter.args"  $(USER_OBJS_QUOTED)
 	@echo 'Finished building target: $@'

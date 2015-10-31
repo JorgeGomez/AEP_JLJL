@@ -2,10 +2,13 @@
 "./Project_Settings/Startup_Code/MPC5606B_init_flash_c.obj"
 "./Project_Settings/Startup_Code/MPC5606B_Startup_c.obj"
 "./Project_Settings/Startup_Code/MPC5606B_HWInit_c.obj"
-"./Sources/MAL/ivor_branch_table_c.obj"
-"./Sources/MAL/MainConfig_c.obj"
-"./Sources/MAL/IntcInterrupts_c.obj"
-"./Sources/MAL/Exceptions_c.obj"
+"./Sources/Application/WindowLifter_c.obj"
+"./Sources/HAL/stmDvr_c.obj"
+"./Sources/HAL/ivor_branch_table_c.obj"
+"./Sources/HAL/MainConfig_c.obj"
+"./Sources/HAL/IntcInterrupts_c.obj"
+"./Sources/HAL/Exceptions_c.obj"
+"./Sources/MAL/Init_Interrupts_c.obj"
 "./Sources/main_c.obj"
 -sym dwarf-2
 -sym full

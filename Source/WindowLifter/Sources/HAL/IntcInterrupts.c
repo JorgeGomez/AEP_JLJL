@@ -26,9 +26,9 @@
 /* Includes                                                                  */
 /*---------------------------------------------------------------------------*/
 
-#include "MAL\MPC5606B.h"         /* MCU platform development header       */
+#include "HAL\MPC5606B.h"         /* MCU platform development header       */
 
-#include "MAL\IntcInterrupts.h"     /* Implement functions from this file */
+#include "HAL\IntcInterrupts.h"     /* Implement functions from this file */
 
 /*---------------------------------------------------------------------------*/
 /* Inline Assembler Defines                                                  */

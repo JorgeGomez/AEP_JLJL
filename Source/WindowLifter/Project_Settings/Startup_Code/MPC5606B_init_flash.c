@@ -11,9 +11,9 @@
 /*  The chip is by default setup to boot from internal Flash and the watchdog is disabled.
  */
 
-#include "MAL\Exceptions.h"     /* IVPR and default exception handlers setup */
-#include "MAL\IntcInterrupts.h" /* INTC Interrupts Requests configuration */
-#include "MAL\MPC5606B_HWInit.h"
+#include "HAL\Exceptions.h"     /* IVPR and default exception handlers setup */
+#include "HAL\IntcInterrupts.h" /* INTC Interrupts Requests configuration */
+#include "HAL\MPC5606B_HWInit.h"
 
 #pragma section code_type ".init"
 

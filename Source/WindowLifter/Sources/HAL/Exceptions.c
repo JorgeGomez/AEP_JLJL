@@ -12,7 +12,7 @@
 /* Includes                                                                   */
 /*----------------------------------------------------------------------------*/
 
-#include "MAL\Exceptions.h" /* Implement functions from this file */
+#include "HAL\Exceptions.h" /* Implement functions from this file */
 
 /*----------------------------------------------------------------------------*/
 /* Function Implementations                                                   */

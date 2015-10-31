@@ -1,1 +1,1 @@
-here we're going to put all the components of the MAL
+here we're going to put all the components of the Middle Abstraction Layer

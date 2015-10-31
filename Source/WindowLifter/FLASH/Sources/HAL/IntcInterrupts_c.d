@@ -1,4 +1,4 @@
-Project_Settings/Startup_Code/__ppc_eabi_init_c.obj: C:\Users\Jorge\Desktop\AEP\drive\ AEP\Jorge\ Workspace\Window\ lifter\ JorgeWS\Source\WindowLifter\Project_Settings\Startup_Code\__ppc_eabi_init.c \
+Sources/HAL/IntcInterrupts_c.obj: C:\Users\Jorge\Desktop\AEP\drive\ AEP\Jorge\ Workspace\Window\ lifter\ JorgeWS\Source\WindowLifter\Sources\HAL\IntcInterrupts.c \
 	C:\Freescale\CW\ MCU\ v10.6\MCU\PA_Support\ewl\EWL_C\include\lib_ewl.prefix \
 	C:\Freescale\CW\ MCU\ v10.6\MCU\PA_Support\ewl\EWL_C\include\common.prefix \
 	C:\Freescale\CW\ MCU\ v10.6\MCU\PA_Support\ewl\EWL_C\include\ewl_c_version.h \
@@ -13,5 +13,4 @@ Project_Settings/Startup_Code/__ppc_eabi_init_c.obj: C:\Users\Jorge\Desktop\AEP\
 	C:\Freescale\CW\ MCU\ v10.6\MCU\PA_Support\ewl\EWL_C\include\cstdint \
 	C:\Freescale\CW\ MCU\ v10.6\MCU\PA_Support\ewl\EWL_C\include\limits_api.h \
 	C:\Freescale\CW\ MCU\ v10.6\MCU\PA_Support\ewl\EWL_C\include\ewl_lib_ext1.h \
-	C:\Freescale\CW\ MCU\ v10.6\MCU\PA_Support\ewl\EWL_Runtime\Runtime_PA\Include\__ppc_eabi_init.h \
-	C:\Freescale\CW\ MCU\ v10.6\MCU\PA_Support\ewl\EWL_Runtime\Runtime_PA\Include\__ppc_eabi_linker.h 
+	C:\Users\Jorge\Desktop\AEP\drive\ AEP\Jorge\ Workspace\Window\ lifter\ JorgeWS\Source\WindowLifter\Project_Headers\HAL\IntcInterrupts.h 

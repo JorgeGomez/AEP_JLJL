@@ -2,21 +2,17 @@
  * Window Lifter project 
  */
 
-#include "MAL\MPC5606B.h"
-#include "MAL\stdtypedef.h"
 
+#include "Application\WindowLifter.h"
 
-
-void main(void) {
-  volatile T_UBYTE i = 0;
-
-  
-
-
-  /* Loop forever */
-  for (;;) {
-    i++;
+void main(void) 
+{
+  Init_System();  
+  while(1)
+  {
+	  WinLifterApp();
   }
+  
 }
 
 

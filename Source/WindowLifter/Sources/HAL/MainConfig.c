@@ -11,8 +11,8 @@
  *  Created on: Oct 9, 2015
  *      Author: Jorge
  */
-#include "MAL\MPC5606B.h"
-#include "MAL\MainConfig.h"
+#include "HAL\MPC5606B.h"
+#include "HAL\MainConfig.h"
 
 /****Functions****/
 void init_modes_and_clocks(void) 
@@ -23,24 +23,7 @@ void init_modes_and_clocks(void)
 	CGM.FMPLL_CR.R = 0x02400100;    	/* 8 MHz xtal: Set PLL0 to 64 MHz */   
 	ME.RUN[0].R = 0x001F0074;       	/* RUN0 cfg: 16MHzIRCON,OSC0ON,PLL0ON,syclk=PLL0 */
 	ME.RUNPC[1].R = 0x00000010; 	  	/* Peri. Cfg. 1 settings: only run in RUN0 mode */
-  	
-  	/*MPC56xxB/S SIU: select ME.RUNPC[1] for the pins from PD[0] to PD[9] */
-  		       
-  	ME.PCTL[LED_1].R = 0x01; 	      
-  	ME.PCTL[LED_2].R = 0x01; 	       
-  	ME.PCTL[LED_3].R = 0x01; 	       
-  	ME.PCTL[LED_4].R = 0x01; 	       
-  	ME.PCTL[LED_5].R = 0x01; 	       
-  	ME.PCTL[LED_6].R = 0x01; 	       
-  	ME.PCTL[LED_7].R = 0x01; 	      
-  	ME.PCTL[LED_8].R = 0x01; 	      
-  	ME.PCTL[LED_9].R = 0x01; 	 
-  	ME.PCTL[LED_10].R = 0x01; 
-  	
-  	/*MPC56xxB/S SIU: select ME.RUNPC[1] for the pins PH[0] and PD[1] */
-  	  	
-  	ME.PCTL[LED_BLUE].R = 0x01; 	       
-  	ME.PCTL[LED_GREEN].R = 0x01;
+  	ME.PCTL[68].R = 0x01; 	    /*MPC56xxB/S SIU: select ME.RUNPC[1] */   
   	
   	/* Mode Transition to enter RUN0 mode: */
   	ME.MCTL.R = 0x40005AF0;         /* Enter RUN0 Mode & Key */
@@ -83,13 +66,62 @@ void Config_IO(void)
   	SIU.PCR[LED_10].R = 0x200;
 
   	/* Direction leds are seted as outputs */
-  	SIU.PCR[LED_9].R = 0x200;
-  	SIU.PCR[LED_10].R = 0x200;
-  	
+  	SIU.PCR[LED_GREEN].R = 0x200;
+  	SIU.PCR[LED_BLUE].R = 0x200;
+  		
   	/* Embedded board buttons are seted as inputs */
   	SIU.PCR[PUSHB_UP].R = 0x100;	
   	SIU.PCR[PUSHB_DOWN].R = 0x100;
-  	SIU.PCR[PUSHB_ANTIPINCH].R = 0x100;
+ 	
+  	
+  	SIU.PCR[PUSHB_ANTIPINCH].R = 0x0103;	/* Pin PE[2]-EIRQ21 configured as GPIO, input, pull up enable */
+	SIU.IFEER.B.IFEE21 = 1;	/* Enable falling edge event on EIRQ21 */	
+	SIU.IRER.B.IRE21 = 1;		/* Enable interrupt EIRQ21 */
+	/*Bar leds is seted as off */
+	SIU.GPDO[LED_1].R = 1;	
+	SIU.GPDO[LED_2].R = 1;
+	SIU.GPDO[LED_3].R = 1;
+	SIU.GPDO[LED_4].R = 1;
+	SIU.GPDO[LED_5].R = 1;
+	SIU.GPDO[LED_6].R = 1;
+	SIU.GPDO[LED_7].R = 1;
+	SIU.GPDO[LED_8].R = 1;
+	SIU.GPDO[LED_9].R = 1;
+	SIU.GPDO[LED_10].R = 1;
 
+	  	/* Direction leds are seted as off */
+	SIU.GPDO[LED_GREEN].R = 1;
+	SIU.GPDO[LED_BLUE].R = 1;
 
 }
+
+void reset_ExtIntrpFlag(void)
+{
+	SIU.ISR.B.EIF21 = 1;	/* Clear interrupt flag */
+}
+
+T_BUTTON read_Pb_Dw(void)
+{
+	return SIU.GPDI[PUSHB_DOWN].B.PDI;
+}
+
+T_BUTTON read_Pb_Up(void)
+{
+	return SIU.GPDI[PUSHB_UP].B.PDI;
+}
+
+T_BUTTON read_Antipinch(void)
+{
+	return SIU.GPDI[PUSHB_ANTIPINCH].B.PDI;
+}
+
+void led_on(T_UBYTE lub_Ch)
+{
+	SIU.GPDO[lub_Ch].R = ON;
+}
+
+void led_off(T_UBYTE lub_Ch)
+{
+	SIU.GPDO[lub_Ch].R = OFF;
+}
+
