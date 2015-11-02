@@ -28,7 +28,7 @@ void stm_init_fnc(void)
 /*                     Configure System Timer Registers                */
 /* ----------------------------------------------------------- */
 
-    STM.CH[0].CMP.R =640000;    
+    STM.CH[0].CMP.R = COMP_1MS_64MHZ;    
         /* System Timer Channel 0's Compare value is :64M   */
     
     STM.CH[0].CCR.B.CEN =0x1;    

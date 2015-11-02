@@ -26,10 +26,32 @@ typedef enum
 
 typedef enum
 {
+	ALL_OFF,
+	BLUE_ON_UP,
+	GREEN_ON_DW
+}T_DIRLED;
+
+typedef enum
+{
 	NO_DIR,
 	UP_DIR,
 	DOWN_DIR
 }T_DIRECTION;
+
+typedef enum
+{
+	STATE_0_OPEN = 1,
+	STATE_1,
+	STATE_2,
+	STATE_3,
+	STATE_4,
+	STATE_5,
+	STATE_6,
+	STATE_7,
+	STATE_8,
+	STATE_9,
+	STATE_10_CLOSE
+}T_STATE_WINDOW;
 
 /****Macros and Variables****/
 #define ON 		0

@@ -25,7 +25,7 @@ void init_ExtInterruptPE2(void)
 void STM_Int_isr(void)
 {    		
 			
-		if(FLAG_1MS) // 
+		if(FLAG_1MS)  
 		{			
 			Inputs_validation();
 			reset_timer();

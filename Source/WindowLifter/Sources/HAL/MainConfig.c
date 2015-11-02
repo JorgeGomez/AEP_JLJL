@@ -74,9 +74,10 @@ void Config_IO(void)
   	SIU.PCR[PUSHB_DOWN].R = 0x100;
  	
   	
-  	SIU.PCR[PUSHB_ANTIPINCH].R = 0x0103;	/* Pin PE[2]-EIRQ21 configured as GPIO, input, pull up enable */
+  	SIU.PCR[PUSHB_ANTIPINCH].R = 0x0100;	/* Pin PE[2]-EIRQ21 configured as GPIO, input, pull up enable */
 	SIU.IFEER.B.IFEE21 = 1;	/* Enable falling edge event on EIRQ21 */	
 	SIU.IRER.B.IRE21 = 1;		/* Enable interrupt EIRQ21 */
+	
 	/*Bar leds is seted as off */
 	SIU.GPDO[LED_1].R = 1;	
 	SIU.GPDO[LED_2].R = 1;

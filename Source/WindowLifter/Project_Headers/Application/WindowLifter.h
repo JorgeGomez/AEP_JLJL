@@ -17,11 +17,13 @@
 void Init_System(void);
 void WinLifterApp(void);
 void Inputs_validation(void);
-void AntiPinchWait(void);
 void ReadButtons(void);
 void AntipinchWait(void);
+void DownWinForAntipinch(void);
 void AntiPinchFunc(void);
-void LED_Motion(void);
-void StatusDir_LED(T_BUTTON lub_Direction);
+void LED_Motion_StateMachine(void);
+void StatusDir_LED(T_DIRLED lub_Direction);
+void Motion_WinLed(void);
+
 
 #endif /* WINDOWLIFTER_H_ */
