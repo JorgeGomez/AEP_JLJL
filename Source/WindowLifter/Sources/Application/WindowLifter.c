@@ -55,7 +55,14 @@ void Inputs_validation(void)
 		{
 			rub_CmdWindow = LONG_PUSH;		
 			Motion_WinLed();
-			StatusDir_LED(rub_DirectionMove);
+			if((rub_StateWin <= STATE_0_OPEN) || (rub_StateWin >= STATE_10_CLOSE))
+			{
+				StatusDir_LED(ALL_OFF);
+			}
+			else
+			{
+				StatusDir_LED(rub_DirectionMove);
+			}
 			rub_DirectionMove = NO_DIR;
 		}
 		
@@ -73,12 +80,22 @@ void Inputs_validation(void)
 		}
 		rul_TimeMsCnt = 0;
 		StatusDir_LED(ALL_OFF);
-		
+		if(rub_CmdWindow != SHORT_PUSH)
+		{
+			rub_DirectionMove = NO_DIR;
+		}	
 	}
 	
 	if(rub_CmdWindow == SHORT_PUSH)
 	{
-		StatusDir_LED(rub_DirectionMove);
+		if((rub_StateWin == STATE_0_OPEN) || (rub_StateWin == STATE_10_CLOSE))
+		{
+			StatusDir_LED(ALL_OFF);
+		}
+		else
+		{
+			StatusDir_LED(rub_DirectionMove);
+		}
 		Motion_WinLed();
 	}
 }
