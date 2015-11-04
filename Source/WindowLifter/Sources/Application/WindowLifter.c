@@ -203,9 +203,15 @@ void ReadButtons(void)
 	
 	lub_Dw= read_Pb_Dw();					/*read button DOWN and write in  lub_Dw if the button has been pressed*/
 		
+	
 	if(lub_Dw == lub_Up)					/*compare if the buttons have been pressed and if have the same value is considered as no valid*/
 	{										/*acording to req.2.2 and 2.4*/
 		rub_ButtonPressed = NO_PRESS;
+		if((lub_Dw == PRESS) && (lub_Up == PRESS))
+		{
+			rub_CmdWindow = NO_OP;
+		}
+		
 	}
 	
 	else
