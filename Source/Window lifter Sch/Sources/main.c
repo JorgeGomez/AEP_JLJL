@@ -76,6 +76,7 @@
  *  Return               :  void
  *  Precondition         :  The correct initialization of the startup code.
  *  Postcondition        :  The cpu can be configured and the program can start.
+ *  Software document	 :	5.2
  **************************************************************/
 void main(void) 
 {

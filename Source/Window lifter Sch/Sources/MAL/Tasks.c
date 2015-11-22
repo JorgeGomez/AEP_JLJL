@@ -56,7 +56,8 @@ const S_TASK cas_TaskList[NUMBER_OF_TASKS] =
 {
 	/*	Name					Execution Period(ticks)		Startup delay(ticks)	*/
 	{	Task1_1ticks,					1,							0	},
-	{	Task2_100ticks,					100, 						1	},
+	{	Task2_50ticks,					50,							1	},
+	{	Task3_400ticks,					400, 						2	},
 /*	{	Taskn,							Period, 				  offset}	Add if you need a new task*/
 };
 
@@ -85,8 +86,8 @@ const S_TASK cas_TaskList[NUMBER_OF_TASKS] =
  * */
 
 /**************************************************************
- *  Name                 :  Task1_10ticks
- *  Description          :  Init function of Scheduler module
+ *  Name                 :  Task1_1ticks
+ *  Description          :  Periodic task.
  *  Parameters           :  void
  *  Return               :  void
  *  Precondition         :  This function must be called after cpu initialization.
@@ -94,23 +95,37 @@ const S_TASK cas_TaskList[NUMBER_OF_TASKS] =
  **************************************************************/
  void Task1_1ticks(void)
 {
-	toggle_led1();
+	 ButtonsValidation();
+	 ReadAntipinch();
 }
 
 
 /**************************************************************
- *  Name                 :  Task3_100ticks
- *  Description          :  Init function of Scheduler module
+ *  Name                 :  Task2_5ticks
+ *  Description          :  Periodic task.
  *  Parameters           :  void
  *  Return               :  void
  *  Precondition         :  This function must be called after cpu initialization.
  *  Postcondition        :  Function gsc_sch_core_exec can be called.
  **************************************************************/
-void Task2_100ticks(void)
+void Task2_50ticks(void)
 {
-	toggle_led2();
+	WindowLifter_StateMachine();
 }
 
+/**************************************************************
+ *  Name                 :  Tas3_400ticks
+ *  Description          :  Periodic task.
+ *  Parameters           :  void
+ *  Return               :  void
+ *  Precondition         :  This function must be called after cpu initialization.
+ *  Postcondition        :  Function gsc_sch_core_exec can be called.
+ **************************************************************/
+void Task3_400ticks(void)
+{
+	WindowLedCommander();
+	LED_Motion_StateMachine();
+}
 
 
 /* Exported functions */

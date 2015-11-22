@@ -61,7 +61,7 @@ T_BOOLEAN rbi_TickFlag = FALSE;
 void init_modes_and_clocks(void);
 void disableWatchdog(void);
 void initPeriClkGen(void);
-void config_Emb_IO(void);
+void config_IO(void);
 void pit_config_fnc(void);
 void pit_isr(void);
 void init_pit_interrupts(void);
@@ -141,7 +141,7 @@ void initPeriClkGen(void)
  *  Precondition         :  This function must be called on the cpu initialization.
  *  Postcondition        :  The GPIOs can be used.
  **************************************************************/
-void config_Emb_IO(void)
+void config_IO(void)
 {
 	/*Bar leds are seted as outputs */
 	SIU.PCR[LED_1].R = 0x200;	
@@ -165,16 +165,16 @@ void config_Emb_IO(void)
   	SIU.PCR[PUSHB_ANTIPINCH].R = 0x0100;
 
 	/*Bar leds is seted  off */
-	SIU.GPDO[LED_1].R = OFF;	
-	SIU.GPDO[LED_2].R = OFF;
-	SIU.GPDO[LED_3].R = OFF;
-	SIU.GPDO[LED_4].R = OFF;
-	SIU.GPDO[LED_5].R = OFF;
-	SIU.GPDO[LED_6].R = OFF;
-	SIU.GPDO[LED_7].R = OFF;
-	SIU.GPDO[LED_8].R = OFF;
-	SIU.GPDO[LED_9].R = OFF;
-	SIU.GPDO[LED_10].R = OFF;
+	SIU.GPDO[LED_1].R = ON;	
+	SIU.GPDO[LED_2].R = ON;
+	SIU.GPDO[LED_3].R = ON;
+	SIU.GPDO[LED_4].R = ON;
+	SIU.GPDO[LED_5].R = ON;
+	SIU.GPDO[LED_6].R = ON;
+	SIU.GPDO[LED_7].R = ON;
+	SIU.GPDO[LED_8].R = ON;
+	SIU.GPDO[LED_9].R = ON;
+	SIU.GPDO[LED_10].R = ON;
 
 	/* Direction leds are seted off */
 	SIU.GPDO[LED_GREEN].R = OFF;
@@ -199,7 +199,7 @@ void init_system(void)
 {
 	init_modes_and_clocks();
 	initPeriClkGen();
-	config_Emb_IO();
+	config_IO();
 	init_pit_interrupts();
 }
 
