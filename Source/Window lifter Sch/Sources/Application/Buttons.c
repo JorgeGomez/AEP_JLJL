@@ -97,6 +97,7 @@ E_STATES_WINDOWS_LIFTER rub_WindowLifterState = VALIDATION;
  *  Postcondition        :  Tells to the system if the press was given correctly, 
  *  						moves the state machine to Short_push.
  *  Software Design doc	 :	5.6
+ *  Requirements		 :	2.2, 2.4
  **************************************************************/
  void ValidPress(void)
  {
@@ -121,6 +122,7 @@ E_STATES_WINDOWS_LIFTER rub_WindowLifterState = VALIDATION;
   *  Postcondition        :  If the press is greater than 500ms moves the Window lifter state machine to Long_push.
   *  						 else selects the window movement, down or up in Short_push.
   *  Software Design doc  :	5.7
+  *  Requirements		  :	2.5, 2.6, 2.7, 2.8
   **************************************************************/
  void SelectionPush(void)
  {
@@ -162,6 +164,7 @@ E_STATES_WINDOWS_LIFTER rub_WindowLifterState = VALIDATION;
   *  Precondition         :  The correct transition to Long_push.
   *  Postcondition        :  The selection of the window movement for a Long push.
   *  Software Design doc  :	5.8
+  *  Requirements		  :	1.7
   **************************************************************/
 void SelectorDirection(void)
 {
@@ -188,6 +191,7 @@ void SelectorDirection(void)
  *  Precondition         :  A correct transition to the state Up_dir.
  *  Postcondition        :  The Command for the window is given.
  *  Software Design doc	 :	5.9
+ *  Requirements		 :	1.7, 3.5
  **************************************************************/
 void Up_Mov_Window(void)
 {
@@ -231,6 +235,7 @@ void Up_Mov_Window(void)
  *  Precondition         :  A correct transition to the state Down_dir.
  *  Postcondition        :  The Command for the window is given.
  *  Software Design doc	 :	5.10
+ *  Requirements		 :	1.7, 3.5
  **************************************************************/
 void Down_Mov_Window(void)
 {
@@ -272,6 +277,7 @@ void Down_Mov_Window(void)
  *  Precondition         :  The movement of the window must be Up.
  *  Postcondition        :  The next state of the window lifter state machine will be Antipinch.
  *  Software Design doc	 :	5.11
+ *  Requirements		 :	3.3
  **************************************************************/
 void Antipinch_Validation(void)
 {
@@ -296,6 +302,7 @@ void Antipinch_Validation(void)
  *  Precondition         :  A valid press for an antipinch.
  *  Postcondition        :  The window must get down.
  *  Software Design doc	 :	5.12
+ *  Requirements		 :	3.6
  **************************************************************/
 void DownForAntipinch(void)
 {
@@ -318,6 +325,7 @@ void DownForAntipinch(void)
  *  Precondition         :  The window is completely open.
  *  Postcondition        :  Before 5 seconds the system can read new commands.
  *  Software Design doc	 :	5.13
+ *  Requirements		 :	3.7
  **************************************************************/
 void Wait_5s(void)
 {
@@ -345,6 +353,7 @@ void Wait_5s(void)
  *  Postcondition        :  A change on the global variable rub_AntipinchButton 
  *  						and increase the counter to validate the correct button press.
  *  Software Design doc	 :	5.14
+ *  Requirements		 :	3.4
  **************************************************************/
 void ReadAntipinch(void)
 {
@@ -385,6 +394,7 @@ void ReadAntipinch(void)
  *  						and increase the counter to validate the correct button press
  *  						and gives the command to select the direction.
  *  Software Design doc	 :	5.15
+ *  Requirements		 :	2.1, 2.3
  **************************************************************/
 void ButtonsValidation(void)
 {
@@ -443,6 +453,7 @@ void ButtonsValidation(void)
  *  Precondition         :  The correct initialisation of the system.
  *  Postcondition        :  Refreshes the State of the window.
  *  Software Design doc	 :	5.16
+ *  Requirements		 :	1.4, 1.5, 1.6 
  **************************************************************/
 void LED_Motion_StateMachine(void)
 {	
@@ -637,6 +648,7 @@ void LED_Motion_StateMachine(void)
  *  Precondition         :  The correct initialisation of the system.
  *  Postcondition        :  Gives the State of the window.
  *  Software Design doc	 :	5.17
+ *  Requirements		 :	1.7, 1.8
  **************************************************************/
 void WindowLedCommander(void)
 {
