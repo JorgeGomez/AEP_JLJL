@@ -224,9 +224,9 @@ E_BUTTON read_button(T_UBYTE lub_Ch)
  *  Precondition         :  This function must be called after cpu initialization.
  *  Postcondition        :  The LED selected is going to turn on.
  **************************************************************/
-void led_on(T_UBYTE lub_Ch)
+void led_on(T_UBYTE lub_Ch_On)
 {
-	SIU.GPDO[lub_Ch].R = ON;
+	SIU.GPDO[lub_Ch_On].R = ON;
 }
 
 /**************************************************************
@@ -237,9 +237,9 @@ void led_on(T_UBYTE lub_Ch)
  *  Precondition         :  This function must be called after cpu initialization.
  *  Postcondition        :  The selected LED  is going to turn off.
  **************************************************************/
-void led_off(T_UBYTE lub_Ch)
+void led_off(T_UBYTE lub_Ch_Off)
 {
-	SIU.GPDO[lub_Ch].R = OFF;
+	SIU.GPDO[lub_Ch_Off].R = OFF;
 }
 
 /**************************************************************
@@ -250,9 +250,51 @@ void led_off(T_UBYTE lub_Ch)
  *  Precondition         :  This function must be called after cpu initialization.
  *  Postcondition        :  The selected LED is going to toggle its status.
  **************************************************************/
-void led_toggle(T_UBYTE lub_Ch)
+void led_toggle(T_UBYTE lub_Ch_Toogle)
 {
-	SIU.GPDO[lub_Ch].R ^= 1;
+	SIU.GPDO[lub_Ch_Toogle].R ^= 1;
+}
+
+/**************************************************************
+ *  Name                 :  led_on_more
+ *  Description          :  Turns on the selected LEDs, from start LED to end LED
+ *  Parameters           :  lub_Ch_On_Start, lub_Ch_On_End
+ *  Return               :  void
+ *  Precondition         :  This function must be called after cpu initialization.
+ *  Postcondition        :  The selected LEDs are going to turn off.
+ **************************************************************/
+void led_on_more(T_UBYTE lub_Ch_On_Start, T_UBYTE lub_Ch_On_End)
+{
+	T_UBYTE lub_DeltaOn = 0, lub_CountOn = 0;
+	
+	lub_DeltaOn = lub_Ch_On_End - lub_Ch_On_Start;	/*Calculate the difference between the start LED and end LED*/
+	
+	for(lub_CountOn = lub_Ch_On_Start; lub_CountOn <=(lub_Ch_On_Start + lub_DeltaOn); lub_CountOn++)
+	{
+		SIU.GPDO[lub_CountOn].R = ON;
+	}
+
+}
+
+/**************************************************************
+ *  Name                 :  led_off_more
+ *  Description          :  Turns off the selected LEDs from start LED to end LED
+ *  Parameters           :  lub_Ch_Off_Start, lub_Ch_Off_End
+ *  Return               :  void
+ *  Precondition         :  This function must be called after cpu initialization.
+ *  Postcondition        :  The selected LED  is going to turn off.
+ **************************************************************/
+void led_off_more(T_UBYTE lub_Ch_Off_Start, T_UBYTE lub_Ch_Off_End)
+{
+	T_UBYTE lub_DeltaOff = 0, lub_CountOff = 0;
+	
+	lub_DeltaOff = lub_Ch_Off_End - lub_Ch_Off_Start;	/*Calculate the difference between the start LED and end LED*/
+	
+	for(lub_CountOff =lub_Ch_Off_Start; lub_CountOff <= (lub_Ch_Off_Start + lub_DeltaOff); lub_CountOff++)
+	{
+		SIU.GPDO[lub_CountOff].R = OFF;
+	}
+
 }
 
 /**************************************************************

@@ -128,19 +128,17 @@ void WindowLifter_StateMachine(void)
 
 void AntiPinch_StateMachine(void)
 {
-	switch(rub_AntiPinchState)
+	if(rub_AntiPinchState == DOWN_ANTIPINCH)
 	{
-		case DOWN_ANTIPINCH:
-				DownForAntipinch();	/*Gives the order to the system of get down the window*/
-			break;
-			
-		case TIME_OUT:
-				Wait_5s();			/*Gives the order to the system of wait 5 seconds before an antipinch*/
-			break;
-			
-		default:
-			rub_AntiPinchState = DOWN_ANTIPINCH;
-			break;
+		DownForAntipinch();	/*Gives the order to the system of get down the window*/
+	}
+	else if(rub_AntiPinchState == TIME_OUT)
+	{
+		Wait_5s();			/*Gives the order to the system of wait 5 seconds before an antipinch*/
+	}
+	else
+	{
+		rub_AntiPinchState = DOWN_ANTIPINCH;
 	}
 }
 

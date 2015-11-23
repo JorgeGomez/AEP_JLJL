@@ -460,146 +460,56 @@ void LED_Motion_StateMachine(void)
 	switch(rub_StateWin)
 	{
 		case STATE_0_OPEN:
-			led_off(LED_1);
-			led_off(LED_2);
-			led_off(LED_3);
-			led_off(LED_4);
-			led_off(LED_5);
-			led_off(LED_6);
-			led_off(LED_7);
-			led_off(LED_8);
-			led_off(LED_9);
-			led_off(LED_10);
+			led_off_more(LED_1,LED_10);
 			break;
 	
 		case STATE_1:
 			led_on(LED_1);
-			led_off(LED_2);
-			led_off(LED_3);
-			led_off(LED_4);
-			led_off(LED_5);
-			led_off(LED_6);
-			led_off(LED_7);
-			led_off(LED_8);
-			led_off(LED_9);
-			led_off(LED_10);
+			led_off_more(LED_2,LED_10);
 			break;
 	
 		case STATE_2:
-			led_on(LED_1);
-			led_on(LED_2);
-			led_off(LED_3);
-			led_off(LED_4);
-			led_off(LED_5);
-			led_off(LED_6);
-			led_off(LED_7);
-			led_off(LED_8);
-			led_off(LED_9);
-			led_off(LED_10);
+			led_on_more(LED_1,LED_2);
+			led_off_more(LED_3,LED_10);
 			break;
 	
 		case STATE_3:
-			led_on(LED_1);
-			led_on(LED_2);
-			led_on(LED_3);
-			led_off(LED_4);
-			led_off(LED_5);
-			led_off(LED_6);
-			led_off(LED_7);
-			led_off(LED_8);
-			led_off(LED_9);
-			led_off(LED_10);
+			led_on_more(LED_1,LED_3);
+			led_off_more(LED_4,LED_10);
 			break;
 	
 		case STATE_4:
-			led_on(LED_1);
-			led_on(LED_2);
-			led_on(LED_3);
-			led_on(LED_4);
-			led_off(LED_5);
-			led_off(LED_6);
-			led_off(LED_7);
-			led_off(LED_8);
-			led_off(LED_9);
-			led_off(LED_10);
+			led_on_more(LED_1,LED_4);
+			led_off_more(LED_5,LED_10);
 			break;
 	
 		case STATE_5:
-			led_on(LED_1);
-			led_on(LED_2);
-			led_on(LED_3);
-			led_on(LED_4);
-			led_on(LED_5);
-			led_off(LED_6);
-			led_off(LED_7);
-			led_off(LED_8);
-			led_off(LED_9);
-			led_off(LED_10);
+			led_on_more(LED_1,LED_5);
+			led_off_more(LED_6,LED_10);
 			break;
 	
 		case STATE_6:
-			led_on(LED_1);
-			led_on(LED_2);
-			led_on(LED_3);
-			led_on(LED_4);
-			led_on(LED_5);
-			led_on(LED_6);
-			led_off(LED_7);
-			led_off(LED_8);
-			led_off(LED_9);
-			led_off(LED_10);
+			led_on_more(LED_1,LED_6);
+			led_off_more(LED_7,LED_10);
 			break;
 	
 		case STATE_7:
-			led_on(LED_1);
-			led_on(LED_2);
-			led_on(LED_3);
-			led_on(LED_4);
-			led_on(LED_5);
-			led_on(LED_6);
-			led_on(LED_7);
-			led_off(LED_8);
-			led_off(LED_9);
-			led_off(LED_10);
+			led_on_more(LED_1,LED_7);
+			led_off_more(LED_8,LED_10);
 			break;
 	
 		case STATE_8:
-			led_on(LED_1);
-			led_on(LED_2);
-			led_on(LED_3);
-			led_on(LED_4);
-			led_on(LED_5);
-			led_on(LED_6);
-			led_on(LED_7);
-			led_on(LED_8);
-			led_off(LED_9);
-			led_off(LED_10);
+			led_on_more(LED_1,LED_8);
+			led_off_more(LED_9,LED_10);
 			break;
 	
 		case STATE_9:
-			led_on(LED_1);
-			led_on(LED_2);
-			led_on(LED_3);
-			led_on(LED_4);
-			led_on(LED_5);
-			led_on(LED_6);
-			led_on(LED_7);
-			led_on(LED_8);
-			led_on(LED_9);
+			led_on_more(LED_1,LED_9);
 			led_off(LED_10);
 			break;
 	
 		case STATE_10_CLOSE:
-			led_on(LED_1);
-			led_on(LED_2);
-			led_on(LED_3);
-			led_on(LED_4);
-			led_on(LED_5);
-			led_on(LED_6);
-			led_on(LED_7);
-			led_on(LED_8);
-			led_on(LED_9);
-			led_on(LED_10);
+			led_on_more(LED_1,LED_10);
 			break;
 			
 		default:

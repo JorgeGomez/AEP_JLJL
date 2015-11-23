@@ -99,8 +99,10 @@ typedef enum
 /*============================================================================*/
 void init_system(void);
 E_BUTTON read_button(T_UBYTE lub_Ch);
-void led_on(T_UBYTE lub_Ch);
-void led_off(T_UBYTE lub_Ch);
-void led_toggle(T_UBYTE lub_Ch);
+void led_on(T_UBYTE lub_Ch_On);
+void led_off(T_UBYTE lub_Ch_Off);
+void led_toggle(T_UBYTE lub_Ch_Toogle);
+void led_on_more(T_UBYTE lub_Ch_On_Start, T_UBYTE lub_Ch_On_End);
+void led_off_more(T_UBYTE lub_Ch_Off_Start, T_UBYTE lub_Ch_Off_End);
 
 #endif /* MAINCONFIG_H_ */ /* Notice: the file ends with a blank new line to avoid compiler warnings */
