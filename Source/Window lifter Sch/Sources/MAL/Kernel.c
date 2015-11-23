@@ -5,7 +5,7 @@
 /*============================================================================*/
 /*!
  * $Source: Kernel.c $
- * $Revision: 1.0 $
+ * $Revision: 1.1 $
  * $Author: Jorge Gomez $
  * $Date: Nov/12/15 $
  */
@@ -36,6 +36,8 @@
 /*  REVISION 	|  		DATE  |     COMMENT	     	 	 	  |AUTHOR  		  */
 /*----------------------------------------------------------------------------*/
 /*   1.0 		|  	Nov/13/15 |added the core of the scheduler|  Jorge Gomez  */
+/*----------------------------------------------------------------------------*/
+/*   1.1 		|  	Nov/18/15 |added corrections period		  |  Jorge Gomez  */
 /*============================================================================*/
 /*                               			 	                              */
 /*============================================================================*/
@@ -93,7 +95,7 @@ void init_Sch_TimeCntrs(void)
 	T_ULONG lul_Position;
 	for(lul_Position = 0; lul_Position < NUMBER_OF_TASKS; lul_Position++)
 	{
-		raul_TimeCounter[lul_Position] = cas_TaskList[NUMBER_OF_TASKS].Offset;
+		raul_TimeCounter[lul_Position] = (cas_TaskList[NUMBER_OF_TASKS].Offset);
 	}
 }
 
@@ -121,7 +123,7 @@ void Sch_function_execution(void)
 					}
 					else
 					{
-						raul_TimeCounter[lul_ArrayPosition] = cas_TaskList[lul_ArrayPosition].Period;
+						raul_TimeCounter[lul_ArrayPosition] = (cas_TaskList[lul_ArrayPosition].Period) - 1;
 						cas_TaskList[lul_ArrayPosition].PtrFunc();
 					}
 				}

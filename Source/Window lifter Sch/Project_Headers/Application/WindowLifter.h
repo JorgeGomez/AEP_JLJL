@@ -1,21 +1,19 @@
 /*============================================================================*/
-/*                                  AEP                                       */
+/*                       		     AEP	                                  */
 /*============================================================================*/
 /*                        OBJECT SPECIFICATION                                */
-/*      This file provides the headers of the functions of Tasks.c            */
 /*============================================================================*/
 /*!
- * $Source: Tasks.h $
- * $Revision: version 1.0 $
- * $Author: Jose Luis Martinez Vicuña $
- * $Date: Nov/13/2015 $
+ * $Source: WindowLifter.h $
+ * $Revision: 2.0 $
+ * $Author: Jose Luis Matrinez $
+ * $Date: Nov/20/2015 $
  */
 /*============================================================================*/
 /* DESCRIPTION :                                                              */
-/** \file
- * This file provides the headers of the functions of the Tasks which are defined
- * in Tasks.c, also is the structure S__TASK which receives the function, period
- * and an offset and the number of tasks to be executed.
+/** \WindowLifter
+    It contains the headers of the state machine of the windowlifter and Antipinch 
+    SoftwareDesign doc: 5.x
 */
 /*============================================================================*/
 /* COPYRIGHT (C) CONTINENTAL AUTOMOTIVE 2014                                  */
@@ -34,39 +32,52 @@
 /*============================================================================*/
 /*  DATABASE           |        PROJECT     | FILE VERSION (AND INSTANCE)     */
 /*----------------------------------------------------------------------------*/
-/*                     |      Scheduler     |            1.0                  */
-/*					   |					|      Project_Headers/MAL  	  */
+/*                     |    WindowLifter  	|            1.20                 */
 /*============================================================================*/
-/*                               OBJECT HISTORY                               */
-/* version 1.0		   |     11/13/2015     |  Jose Luis Martinez Vicuña      */
+/*                    			OBJECT HISTORY                          	  */
+/*============================================================================*/
+/*  REVISION 	|  		DATE  	|     COMMENT	     	 	   |AUTHOR 	  	  */
+/*----------------------------------------------------------------------------*/
+/* version 1.10 | 11/13/2015    |  added new functionalities   |Jorge Gomez	  */
+/*----------------------------------------------------------------------------*/
+/* version 1.15 | 11/13/2015    |  		added corrections	   |Jose Martinez */
+/*----------------------------------------------------------------------------*/
+/* version 1.20 | 11/13/2015    |  		first release		   |Jorge Gomez	  */
+/*----------------------------------------------------------------------------*/
+/* version 2.0	| 11/13/2015    | new version with scheduler   |Jose Martinez */
 /*============================================================================*/
 /*
- * $Log: Tasks.h  $
+ * $Log: WindowLifter.h  $
   ============================================================================*/
-#ifndef TASKS_H_
-#define TASKS_H_
+#ifndef WINDOWLIFTER_H_
+#define WINDOWLIFTER_H_
+
 
 /* Includes */
 /*============================================================================*/
 #include "HAL/stdtypedef.h"
+#include "HAL/MainConfig.h"
+#include "Application/Buttons.h"
 
 /* Constants and types */
 /*============================================================================*/
-typedef void(*T_PFUNC)(void);
+typedef enum
+{
+	VALIDATION,
+	SHORT_PUSH,
+	LONG_PUSH,
+	UP_DIR,
+	DOWN_DIR,
+	ANTIPINCH
+	
+}E_STATES_WINDOWS_LIFTER; 	/*states for window lifter state machine*/
 
-typedef struct{
-	T_PFUNC PtrFunc;
-	T_ULONG Period;
-	T_UBYTE Offset;
-}S_TASK;
+typedef enum
+{
+	DOWN_ANTIPINCH,
+	TIME_OUT
+}E_STATES_ANTIPINCH;		/*states for antipinch state machine*/
 
-typedef enum {
-	TASK1,
-	TASK2,
-	TASK3,
-	/*number of task*/
-	NUMBER_OF_TASKS
-}E_NUMTASK;
 
 /* Exported Variables */
 /*============================================================================*/
@@ -75,16 +86,21 @@ typedef enum {
 
 /* Exported functions prototypes */
 /*============================================================================*/
-PUBLIC_FCT void ButtonsValidation(void);
-PUBLIC_FCT void WindowLifter_StateMachine(void);
-PUBLIC_FCT void LED_Motion_StateMachine(void);
-PUBLIC_FCT void ReadAntipinch(void);
-PUBLIC_FCT void WindowLedCommander(void);
 
-/* Functions prototypes */
-/*============================================================================*/
-void Task1_1ticks(void);
-void Task2_50ticks(void);
-void Task3_400ticks(void);
+PUBLIC_FCT void ValidPress(void);
+PUBLIC_FCT void SelectionPush(void);
+PUBLIC_FCT void SelectorDirection(void);
+PUBLIC_FCT void Down_Mov_Window(void);
+PUBLIC_FCT void Up_Mov_Window(void);
+PUBLIC_FCT void DownForAntipinch(void);
+PUBLIC_FCT void Wait_5s(void);
 
-#endif /* TASKS_H_ */  /* Notice: the file ends with a blank new line to avoid compiler warnings */
+void WindowLifter_StateMachine(void);
+void AntiPinch_StateMachine(void);
+
+
+#endif /* WINDOWLIFTER_H_ */ /* Notice: the file ends with a blank new line to avoid compiler warnings */
+
+
+
+
